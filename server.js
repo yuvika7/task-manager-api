@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const taskRoutes = require("./routes/taskRoutes");
 dotenv.config();
 
 connectDB();
@@ -13,6 +14,8 @@ app.use(express.json());
 
 
 app.use("/api/user", userRoutes);
+
+app.use("/api/tasks", taskRoutes);
 
 app.use("/api/auth", authRoutes);
 
